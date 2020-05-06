@@ -1,0 +1,46 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="/imperialbmicalc" id="navbar-text">Imperial BMI Calculator<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/metricbmicalc" id="navbar-text">Metric BMI Calculator</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3"></div>
+      <div class="col-md-6">
+        <h2 id="">Imperial BMI Calculator</h2>
+        <form>
+          <div class="form-group">
+            <label for="inputWeightLB">Weight</label>
+            <input type="number" [(ngModel)]="weightLBs" class="form-control" placeholder="Enter your weight in pounds" name="weightLB">
+          </div>
+          <div class="form-group">
+            <label for="inputHeightIN">Height</label>
+            <input type="number" [(ngModel)]="heightINCH" class="form-control" placeholder="Enter your height in inches" name="heightIN">
+          </div>
+          <button type="button" class="btn btn-success" (click)="bodyMassImperial()">Calculate</button>
+        </form>
+      </div>
+      <div class="col-md-3"></div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-3"></div>
+      <div class="col-md-6">
+        <h4>Your Body Mass Index: {{bmiImperial | number : '1.2-2'}}</h4>
+      </div>
+      <div class="col-md-3"></div>
+    </div>
+  </div>
